@@ -97,7 +97,7 @@ CFLAGS := $(WARNINGS) \
 ifneq (,$(DEBUG))
 ENABLE_DEBUG := 1
 endif
-
+# ENABLE_DEBUG := 1
 # Append different flags for debugging, profiling and release. Define
 # ENABLE_DEBUG and ENABLE_PROFILING to enable profiling.
 ifdef ENABLE_DEBUG

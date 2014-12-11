@@ -3305,6 +3305,11 @@ FuncDeclaration *resolveFuncCall(Loc loc, Scope *sc, Dsymbol *s,
         }
         else
         {
+            if (!fd) {
+                ::error(loc, "%s cannot deduce function from argument types !(%s)%s, candidates are:",
+                        s->toChars(), tiargsBuf.peekString(), fargsBuf.peekString());
+                return NULL; 
+            }
             assert(fd);
 
             bool hasOverloads = fd->overnext != NULL;
